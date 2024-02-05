@@ -15,6 +15,11 @@ body {
     flex-direction: column;
     min-height: 95vh; /* This ensures the body takes at least the full viewport height */
     margin: 0;
+
+    background-image: url('idk.jpg');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
 }
 
 footer {
