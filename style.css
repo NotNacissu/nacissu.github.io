@@ -25,6 +25,42 @@ footer {
     margin: 20px auto 0; /* Adjust margin as needed */
 }
 
+nav {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Separates the logo and nav links */
+    align-items: center;
+    width: 100%; /* Ensure the container takes full width */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-right: 20px; /* Adjust as needed for spacing */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
 .footerText {
    display: block; 
    text-align: center;
@@ -57,3 +93,4 @@ img {
     display: block;
     text-align: center;
 }
+
