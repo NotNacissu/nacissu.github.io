@@ -10,21 +10,32 @@ main {
 }
 
 body {
-    background-color: #414040; /* Light gray background color */
+    /*background-color: #414040;  Light gray background color */
     display: flex;
     flex-direction: column;
     min-height: 95vh; /* This ensures the body takes at least the full viewport height */
     margin: 0;
 
-    background-image: url('idk.jpg');
-    background-size: cover; /* Ensures the background image covers the entire viewport */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/Background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px); /* Adjust the blur amount as needed */
+    z-index: -1; /* Place the pseudo-element below the content */
 }
 
 footer {
     border-top: 1px solid #cccccc9a; 
-    padding-top: 10px; 
+    padding-top: 10px;  
     margin-top: auto; /* This pushes the footer to the bottom */margin-top: 20px;
     width: 1250px; /* Adjust the width of the line as needed */
     margin: 20px auto 0; /* Adjust margin as needed */
