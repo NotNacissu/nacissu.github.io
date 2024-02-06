@@ -15,7 +15,6 @@ body {
     flex-direction: column;
     min-height: 95vh; /* This ensures the body takes at least the full viewport height */
     margin: 0;
-
 }
 
 body::before {
@@ -34,12 +33,16 @@ body::before {
 }
 
 footer {
-    border-top: 1px solid #cccccc9a; 
     padding-top: 10px;  
-    margin-top: auto; /* This pushes the footer to the bottom */margin-top: 20px;
-    width: 1250px; /* Adjust the width of the line as needed */
-    margin: 20px auto 0; /* Adjust margin as needed */
+    margin-top: auto; /* This pushes the footer to the bottom */
+    /* width: 1250px; /* Adjust the width of the line as needed */
+    margin: auto; /* Adjust margin as needed */
 }
+
+h1 {
+    font-size: 50px;
+}
+
 
 nav {
     display: flex;
@@ -80,6 +83,7 @@ nav {
 .footerText {
    display: block; 
    text-align: center;
+   font-family: 'Quicksand', sans-serif;
 }
 
 a img {
@@ -102,15 +106,22 @@ img {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 90px;
 }
 
 .textCenter {
     display: block;
     text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(255, 255, 255)
 }
 
 .navbarLinks {
     font-family: "Helvetica", sans-serif;
 }
 
+.footer-line {
+    width: 100%; /* Set the width to 100% to span the entire footer */
+    border-top: 1px solid #cccccc9a; /* Adjust the border properties as needed */
+    margin-top: 100px; /* Adjust margin-top as needed */
+}
