@@ -107,13 +107,15 @@ img {
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 90px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7); If I want it stronger */
 }
 
 .textCenter {
     display: block;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .navbarLinks {
@@ -124,4 +126,24 @@ img {
     width: 100%; /* Set the width to 100% to span the entire footer */
     border-top: 1px solid #cccccc9a; /* Adjust the border properties as needed */
     margin-top: 100px; /* Adjust margin-top as needed */
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-container:hover .logo-text {
+    transform: translateX(50%); /* Adjust the distance text moves to the right */
+    opacity: 1;
+}
+
+.logo-text {
+    position: absolute;
+    top: 35%;
+    left: 100%; /* Position the text just outside the image */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap; /* Prevents the text from breaking into a new line */
+    font-family: "Helvetica", sans-serif;
+    color: rgb(255, 255, 255);
 }
