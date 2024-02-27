@@ -23,6 +23,10 @@ let changingDirection = false;
 let dx = 10;
 // Vertical velocity
 let dy = 0;
+// Food x-coordinate
+let foodX;
+// Food y-coordinate
+let foodY;
 
 
 // Get the canvas element
@@ -44,7 +48,8 @@ document.addEventListener("keydown", changeDirection);
  * Main function of the game
  */
 function main() {
-
+    // If the game ended return early to stop game
+    if (didGameEnd()) return;
 
     setTimeout(function onTick() {
     changingDirection = false;
@@ -87,9 +92,51 @@ function advanceSnake() {
     const head = {x: snake[0].x + dx, y: snake[0].y + dy};
     // Add the new head to the beginning of snake body
     snake.unshift(head);
+    const didEatFood = snake[0].x === foodX && snake[0].y === foodY;
+    if (didEatFood) {
+      // Increase score
+      score += 10;
+      // Display score on screen
+      document.getElementById('score').innerHTML = score;
 
-    // Remove the last part of snake body so that it doesnt keep extending.
-    snake.pop();
+      // Generate new food location
+      createFood();
+    } else {
+      // Remove the last part of snake body
+      snake.pop();
+    }
+}
+
+/**
+* Returns true if the head of the snake touched another part of the game
+* or any of the walls
+*/
+function didGameEnd() {
+    for (let i = 4; i < snake.length; i++) {
+      if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+        showGameOverMessage();
+        return true
+      }
+
+    }
+
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x > gameCanvas.width - 10;
+    const hitToptWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y > gameCanvas.height - 10;
+
+    if(hitLeftWall || hitRightWall || hitToptWall || hitBottomWall) {
+        showGameOverMessage();
+        return true
+    }
+    return false
+}
+
+/**
+* Displays a game over message to the user
+*/
+function showGameOverMessage() {
+    alert("Game Over! Your final score is: " + score);
 }
 
 /**
@@ -152,12 +199,12 @@ function drawSnakePart(snakePart) {
 
 
 /**
-     * Changes the vertical and horizontal velocity of the snake according to the
-     * key that was pressed.
-     * The direction cannot be switched to the opposite direction, to prevent the snake
-     * from reversing
-     * For example if the the direction is 'right' it cannot become 'left'
-     */
+* Changes the vertical and horizontal velocity of the snake according to the
+* key that was pressed.
+* The direction cannot be switched to the opposite direction, to prevent the snake
+* from reversing
+* For example if the the direction is 'right' it cannot become 'left'
+*/
 function changeDirection(event) {
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
