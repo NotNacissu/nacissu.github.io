@@ -4,6 +4,8 @@ const CANVAS_BORDER_COLOUR = 'black';
 const CANVAS_BACKGROUND_COLOUR = "white";
 const SNAKE_COLOUR = 'lightgreen';
 const SNAKE_BORDER_COLOUR = 'darkgreen';
+const FOOD_COLOUR = 'red';
+const FOOD_BORDER_COLOUR = 'darkred';
 
 let snake = [
   {x: 150, y: 150},
@@ -30,6 +32,8 @@ const ctx = gameCanvas.getContext("2d");
 
 // Start game
 main();
+// Create the first food location
+createFood();
 
 
 // Call changeDirection whenever a key is pressed
@@ -45,6 +49,7 @@ function main() {
     setTimeout(function onTick() {
     changingDirection = false;
     clearCanvas();
+    drawFood();
     advanceSnake();
     drawSnake();
 
@@ -72,14 +77,11 @@ function clearCanvas() {
 }
 
 
-
-
-
 /**
-     * Advances the snake by changing the x-coordinates of its parts
-     * according to the horizontal velocity and the y-coordinates of its parts
-     * according to the vertical veolocity
-     */
+* Advances the snake by changing the x-coordinates of its parts
+* according to the horizontal velocity and the y-coordinates of its parts
+* according to the vertical veolocity
+*/
 function advanceSnake() {
     // Create the new Snake's head
     const head = {x: snake[0].x + dx, y: snake[0].y + dy};
@@ -90,6 +92,39 @@ function advanceSnake() {
     snake.pop();
 }
 
+/**
+* Generates a random number that is a multiple of 10 given a minumum
+* and a maximum number
+*/
+function randomTen(min, max) {
+    return Math.round((Math.random() * (max-min) + min) / 10) * 10;
+}
+
+/**
+* Draw the food on the canvas
+*/
+function drawFood() {
+    ctx.fillStyle = FOOD_COLOUR;
+    ctx.strokestyle = FOOD_BORDER_COLOUR;
+    ctx.fillRect(foodX, foodY, 10, 10);
+    ctx.strokeRect(foodX, foodY, 10, 10);
+}
+
+/**
+* Creates random set of coordinates for the snake food.
+*/
+function createFood() {
+    // Generate a random number the food x-coordinate
+    foodX = randomTen(0, gameCanvas.width - 10);
+    // Generate a random number for the food y-coordinate
+    foodY = randomTen(0, gameCanvas.height - 10);
+
+    // if the new food location is where the snake currently is, generate a new food location
+    snake.forEach(function isFoodOnSnake(part) {
+      const foodIsoNsnake = part.x == foodX && part.y == foodY;
+      if (foodIsoNsnake) createFood();
+    });
+}
 
 /**
  * Draws the snake on the canvas
