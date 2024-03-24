@@ -11,7 +11,6 @@ new Vue({
             { id: 7, name: 'Project 7', description: 'Description of Project 7', link: 'project7.html' },
             { id: 8, name: 'Project 8', description: 'Description of Project 8', link: 'project8.html' },
             { id: 9, name: 'Project 9', description: 'Description of Project 9', link: 'project9.html' },
-            { id: 10, name: 'Project 10', description: 'Description of Project 10', link: 'project10.html' },
             // Add more projects as needed
         ]
     },
