@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Services - CelebrateMasters</title>
+    <title>Nacissu - Projects</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="Images/Bocchers.jpg">
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="myscripts.js"></script>
 </head>
 <body>
@@ -24,14 +25,22 @@
         </nav>
     </header>
     <main>
-        <body>
-            <h1 class="textCenter">Projects</h1>
-        </body>
+        <div id="app">
+        <h1 class="textCenter">Projects</h1>
+            <ul>
+                <li v-for="project in projects" :key="project.id">
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+                    <p>Date</p>
+                </li>
+            </ul>
+        </div>
     </main>
     <footer>
         <div class="footer-line"></div> 
         <p class="footerText"> (This website is still in development. There are a lot of features missing!)</p>
         <p class="footerText">If you need to contact me by email, please email me at <a href = "mailto: nacissu0@gmail.com">nacissu0@gmail.com</a></p>
     </footer>
+    <script src="projectList.js"></script>
 </body>
 </html>
