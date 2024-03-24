@@ -1,23 +1,52 @@
 
+  
+  
 header {
-    background-color: #000000; /* Dark background color for the header */
-    color: white; /* Text color for the header */
-    padding: 10px 0; /* Add padding to the header */
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #123;
+    color: white;
+    /* min-height: 50vh;*/
+    padding: 0px;
 }
+  
+
+  
+/* header {
+    background-color: #424242;  Dark background color for the header 
+    color: white;  Text color for the header 
+    padding: 10px 0;  Add padding to the header 
+} */
 
 main {
     flex: 1; /* This makes the main section take up the remaining vertical space */
 }
 
 body {
-    /*background-color: #414040;  Light gray background color */
     display: flex;
     flex-direction: column;
     min-height: 95vh; /* This ensures the body takes at least the full viewport height */
     margin: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
 
-body::before {
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+body#home-background::before {
     content: "";
     position: fixed;
     top: 0;
@@ -31,6 +60,7 @@ body::before {
     filter: blur(3px); /* Adjust the blur amount as needed */
     z-index: -1; /* Place the pseudo-element below the content */
 }
+
 
 footer {
     padding-top: 10px;  
@@ -86,7 +116,7 @@ nav {
    font-family: 'Quicksand', sans-serif;
 }
 
-a img {
+a#logo-link img {
     border: 2px solid white;
     border-radius: 50%;
     width: 50px;
@@ -95,14 +125,25 @@ a img {
 }
 
 img {
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     border-radius: 50%;
 }
 
-.imgCenter {
+#imgCenter {
+    border: 2px solid white;
+    display: block; /* Ensures the anchor is displayed as a block with a width and height */
+    margin-top: 100px;
+    margin-bottom: 90px;
     width: 250px;
     height: 250px; 
-    display: block;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7); If I want it stronger */
+}
+
+#circle-link {
+    display: block; /* Ensures the anchor is displayed as a block with a width and height */
+    border-radius: 50%; /* Makes the anchor circular */
+    width: 250px;
+    height: 250px; 
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -122,15 +163,24 @@ img {
     animation-fill-mode: forwards;
 }
 
-/* Animation for the first text 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
 .textCenter:nth-child(1) {
-    animation: fadeInUp 1s ease-out 0.5s; /* Delay of 0.5 seconds 
+    animation: fadeInUp 1.5s ease-out 0.5s forwards; /* Delay of 0.5 seconds */
 }
 
-/* Animation for the second text 
 .textCenter:nth-child(2) {
-    animation: fadeInUp 1s ease-out 5s; /* Delay of 1 second 
-} */
+    animation: fadeInUp 1.5s ease-out 2s forwards; /* Delay of 1.5 seconds for h2 */
+}
 
 .navbarLinks {
     font-family: "Helvetica", sans-serif;
@@ -181,13 +231,3 @@ img {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
