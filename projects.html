@@ -27,11 +27,13 @@
     <main>
         <div id="app">
         <h1 class="textCenter">Projects</h1>
-            <ul>
-                <li v-for="project in projects" :key="project.id">
-                    <h2>{{ project.name }}</h2>
-                    <p>{{ project.description }}</p>
-                    <p>Date</p>
+            <ul class="project-ul">
+                <li v-for="project in reversedProjects" :key="project.id" class="project-li">
+                    <div class="project-list-font">
+                        <h2>{{ project.name }}</h2>
+                        <p>{{ project.description }}</p>
+                        <p>Date</p>
+                    </div>
                 </li>
             </ul>
         </div>

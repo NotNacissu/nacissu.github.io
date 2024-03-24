@@ -14,5 +14,10 @@ new Vue({
             { id: 10, name: 'Project 10', description: 'Description of Project 10', link: 'project10.html' },
             // Add more projects as needed
         ]
+    },
+    computed: {
+        reversedProjects: function() {
+            return this.projects.slice().reverse();
+        }
     }
 });

@@ -231,3 +231,29 @@ img {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+
+
+/* PROJECT HTML CODE */
+
+.project-ul{
+    list-style-type: none;
+}
+
+.project-li{
+    background-color: black;
+    padding: 10px; /* Add padding for spacing */
+    margin-bottom: 20px; /* Add margin to separate each project */
+    width: calc(25% - 20px); /* Set a fixed width for each box (25% of the container width with margin) */
+    height: 200px; /* Set a fixed height for each box */
+    display: inline-block; /* Display items in a row */
+    margin-right: 20px; /* Add some space between items */
+    vertical-align: top; /* Align items to the top of the row */
+    box-sizing: border-box; /* Include padding and border in the width */
+    border-radius: 0.75rem;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7); If I want it stronger */
+}
+
+.project-list-font {
+    --tw-text-opacity: 1;
+    color: rgba(121, 123, 124, var(--tw-text-opacity));
+}
