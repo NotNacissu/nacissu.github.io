@@ -27,14 +27,15 @@
     <main>
         <div id="app">
         <h1 class="textCenter">Projects</h1>
-            <ul class="project-ul">
-                <li v-for="project in reversedProjects" :key="project.id" class="project-li">
+            <ul class="project-ul">        
+                <li v-for="project in reversedProjects" :key="project.id" id="project-link" class="project-li" style="cursor: pointer;" @click="navigateToProject(project.link)" >
                     <div>
-                        <h2 id="project-list-title">{{ project.name }}</h2>
+                        <h3 id="project-list-title">{{ project.name }}</h3>
                         <p id="project-list-info">{{ project.description }}</p>
                         <p id="project-list-date">Date</p>
                     </div>
                 </li>
+                </div>
             </ul>
         </div>
     </main>

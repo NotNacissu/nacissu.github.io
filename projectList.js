@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data: {
         projects: [
-            { id: 1, name: 'Project 1', description: 'Description of Project 1', link: 'project1.html' },
+            { id: 1, name: 'Project 1', description: 'Description of Project 1', link: 'https://www.youtube.com/watch?v=fevGo3H5840' },
             { id: 2, name: 'Project 2', description: 'Description of Project 2', link: 'project2.html' },
             { id: 3, name: 'Project 3', description: 'Description of Project 3', link: 'project3.html' },
             { id: 4, name: 'Project 4', description: 'Description of Project 4', link: 'project4.html' },
@@ -17,6 +17,11 @@ new Vue({
     computed: {
         reversedProjects: function() {
             return this.projects.slice().reverse();
+        }
+    },
+    methods: {
+        navigateToProject: function(link) {
+            window.location.href = link;
         }
     }
 });

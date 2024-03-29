@@ -9,14 +9,7 @@ header {
     /* min-height: 50vh;*/
     padding: 0px;
 }
-  
 
-  
-/* header {
-    background-color: #424242;  Dark background color for the header 
-    color: white;  Text color for the header 
-    padding: 10px 0;  Add padding to the header 
-} */
 
 main {
     flex: 1; /* This makes the main section take up the remaining vertical space */
@@ -251,7 +244,12 @@ img {
     box-sizing: border-box; /* Include padding and border in the width */
     border-radius: 0.75rem;
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7); If I want it stronger */
-}
+} 
+
+#project-link:hover h3{
+    transition: color 0.2s ease; /* Add transition for smoother effect */
+    color: blue; /* Change the color of h2 when .project-li is hovered */
+} 
 
 #project-list-title {
     color: azure;
@@ -270,6 +268,5 @@ img {
     font-size: small;
     position: relative;
     bottom: -30px;
-
-
 }
+
