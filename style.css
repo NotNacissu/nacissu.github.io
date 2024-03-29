@@ -233,6 +233,7 @@ img {
 }
 
 .project-li{
+    position: relative; /* Add position relative to allow absolute positioning inside */
     background-color: #212121;
     padding: 10px; /* Add padding for spacing */
     margin-bottom: 10px; /* Add margin to separate each project */
@@ -266,7 +267,24 @@ img {
     margin: 10px; /* Add padding for spacing */
     color: azure;
     font-size: small;
-    position: relative;
-    bottom: -30px;
+    position: absolute; /* Position absolutely relative to the project box */
+    top: 10px; /* Position it 10px from the bottom */
+    right: 10px; /* Position it 10px from the right */
 }
 
+
+#projectTextCenter {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#project-list-languages {
+    position: absolute;
+    bottom: 10px; /* Position it 10px from the bottom */
+    left: 10px; /* Position it 10px from the left */
+    color: azure;
+    font-size: small;
+    margin: 10px; /* Add padding for spacing */
+}

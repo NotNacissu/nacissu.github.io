@@ -6,7 +6,6 @@
     <link rel="icon" href="Images/Bocchers.jpg">
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="myscripts.js"></script>
 </head>
 <body>
     <header>
@@ -26,13 +25,15 @@
     </header>
     <main>
         <div id="app">
-        <h1 class="textCenter">Projects</h1>
+        <h1 id="projectTextCenter">Projects</h1>
+        <p id="projectTextCenter">This page lists some of my personal and work projects.</p>
             <ul class="project-ul">        
                 <li v-for="project in reversedProjects" :key="project.id" id="project-link" class="project-li" style="cursor: pointer;" @click="navigateToProject(project.link)" >
                     <div>
                         <h3 id="project-list-title">{{ project.name }}</h3>
                         <p id="project-list-info">{{ project.description }}</p>
-                        <p id="project-list-date">Date</p>
+                        <p id="project-list-languages">{{ project.languages.join(', ') }}</p> <!-- Display languages -->
+                        <p id="project-list-date">{{ project.date | formatDate }}</p>
                     </div>
                 </li>
                 </div>
