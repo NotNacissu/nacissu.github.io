@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-    
 <head>
     <title>Nacissu - Contact</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+    <link rel="stylesheet" type="text/css" href="contact.css">
     <script src="myscripts.js"></script>
 </head>
 <body>
@@ -24,12 +23,49 @@
         </nav>
     </header>
     <main>
-        <body> </body>
+        <section id="contact-section">
+            <div class="contact-box">
+                <h2>Contact Me</h2>
+                <p>If you have any questions or inquiries, feel free to send me a message!</p>
+            </div>
+            <div class="contact-form-box">
+                <h2>Contact Form</h2>
+                <form id="contact-form" method="post" action="send_email.php">
+                    <div class="form-group">
+                        <div>
+                            <label for="first_name">First Name:</label>
+                            <label for="last_name">Last Name:</label>
+                         </div>
+                        <div>
+                            <input type="text" id="first_name" name="first_name" required>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (optional):</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>                
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-line"></div> 
         <p class="footerText"> (This website is still in development. There are a lot of features missing!)</p>
-        <p class="footerText">If you need to contact me by email, please email me at <a href = "mailto: nacissu0@gmail.com">nacissu0@gmail.com</a></p>
+        <p class="footerText">If you need to contact me by email, please email me at <a href="mailto:nacissu0@gmail.com">nacissu0@gmail.com</a></p>
     </footer>
 </body>
 </html>

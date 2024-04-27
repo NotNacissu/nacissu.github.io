@@ -289,3 +289,39 @@ img {
     font-size: small;
     margin: 10px; /* Add padding for spacing */
 }
+
+
+/* ABOUT ME SECTION */
+
+
+#about-me-section {
+    background-color: #212121;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px; /* Add some margin to create a gap between navbar and section */
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Add a max-width to limit the width on larger screens */
+    margin-left: auto; /* Center the section horizontally */
+    margin-right: auto; /* Center the section horizontally */
+    height: 100%; /* Make the section take up 100% of the vertical space */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Set flex direction to column */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); 
+}
+
+#about-me-section h1 {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#about-me-section h2 {
+    margin-top: 0;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(255, 255, 255);
+    padding-bottom: 10px;
+}
+

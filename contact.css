@@ -1,0 +1,91 @@
+/* Contact page specific styles */
+/* Add your contact page CSS rules here */
+
+/* Contact Section Styles */
+#contact-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20px; /* Add margin to create space between the navbar and contact section */
+}
+
+.contact-box,
+.contact-form-box {
+    background-color: #212121;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.contact-form-box {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.contact-box h2,
+.contact-form-box h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.contact-form-box form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+  
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: #fff;
+    flex-grow: 1; /* Allow inputs to grow and take up remaining space */
+}
+
+.form-group input,
+.form-group textarea {
+    width: calc(100% - 10px); /* Adjust the width to leave some space around the fields */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #23a6d5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; 
+    margin: 0 auto; 
+}
+
+button[type="submit"]:hover {
+    background-color: #1c8cb4;
+}
+
+.form-group div {
+    display: flex; /* Display children elements in a flex container */
+    align-items: center; /* Vertically center items */
+}
+
+.form-group div input {
+    flex-grow: 1; /* Allow inputs to grow and take up remaining space */
+}
+
+#first_name,
+#last_name {
+    margin-right: 10px; /* Add margin between the first and last name fields */
+}
