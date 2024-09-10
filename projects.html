@@ -25,20 +25,20 @@
     </header>
     <main>
         <div id="app">
-        <h1 id="projectTextCenter">Projects</h1>
-        <p id="projectTextCenter">This page lists some of my personal and work projects.</p>
+            <h1 id="projectTextCenter">Projects</h1>
+            <p id="projectTextCenter">This page lists some of my personal and work projects.</p>
             <ul class="project-ul">        
-                <li v-for="project in reversedProjects" :key="project.id" id="project-link" class="project-li" style="cursor: pointer;" @click="navigateToProject(project.link)" >
+                <li v-for="project in sortedProjects" :key="project.id" id="project-link" class="project-li" style="cursor: pointer;" @click="navigateToProject(project.link)">
                     <div>
                         <h3 id="project-list-title">{{ project.name }}</h3>
                         <p id="project-list-info">{{ project.description }}</p>
-                        <p id="project-list-languages">{{ project.languages.join(', ') }}</p> <!-- Display languages -->
-                        <p id="project-list-date">{{ project.date | formatDate }}</p>
+                        <p id="project-list-languages">Languages: {{ project.languages.join(', ') }}</p>
+                        <p id="project-list-date">Created {{ project.date | formatDate }}</p>
                     </div>
-                </li>
-                </div>
+                </li>           
             </ul>
         </div>
+        
     </main>
     <footer>
         <div class="footer-line"></div> 
