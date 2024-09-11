@@ -4,31 +4,66 @@
 /* Contact Section Styles */
 #contact-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     margin-top: 20px; /* Add margin to create space between the navbar and contact section */
 }
 
-.contact-box,
+.contact-box {
+    background-color: #212121;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px; /* Adjust based on your needs */
+    display: flex;
+    flex-direction: column; /* Stack the contact info and form vertically */
+}
+
+.contact-box h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.contact-info {
+    margin-bottom: 20px; /* Space between contact info and form */
+    border-bottom: 1px solid #fff; /* Add a white line between sections */
+    padding-bottom: 20px; /* Space between the border and the content */
+}
+
+.contact-columns {
+    display: flex;
+    justify-content: space-between; /* Space out the two columns */
+}
+
+.contact-column {
+    width: 45%; /* Adjust width to fit the columns side by side */
+}
+
+.contact-info p,
+.contact-info a {
+    color: #fff; /* Ensure text color matches */
+    margin-left: 10px; /* Space between the icon and the text */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Space between contact items */
+}
+
+.contact-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    margin-right: 10px; /* Space between the icon and the text */
+}
+
 .contact-form-box {
     background-color: #212121;
     color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 45%;
-    max-width: 400px;
-    margin-bottom: 20px;
-}
-
-.contact-form-box {
-    flex-grow: 1;
-    margin-left: 20px;
-}
-
-.contact-box h2,
-.contact-form-box h2 {
-    text-align: center;
-    margin-top: 0;
+    width: 100%;
 }
 
 .contact-form-box form {
@@ -37,7 +72,6 @@
 
 .form-group {
     margin-bottom: 20px;
-  
 }
 
 .form-group label {
@@ -45,7 +79,6 @@
     margin-bottom: 5px;
     margin-right: 10px;
     color: #fff;
-    flex-grow: 1; /* Allow inputs to grow and take up remaining space */
 }
 
 .form-group input,
